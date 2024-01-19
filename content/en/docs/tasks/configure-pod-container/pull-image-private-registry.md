@@ -110,7 +110,9 @@ the base64 encoded string in the data was successfully decoded, but could not be
 Create this Secret, naming it `regcred`:
 
 ```shell
+set +o history # disable history before create secret with password
 kubectl create secret docker-registry regcred --docker-server=<your-registry-server> --docker-username=<your-name> --docker-password=<your-pword> --docker-email=<your-email>
+set -o history # enable history
 ```
 
 where:
